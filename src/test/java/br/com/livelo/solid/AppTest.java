@@ -1,4 +1,4 @@
-package br.com.livelo.Solid;
+package br.com.livelo.solid;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

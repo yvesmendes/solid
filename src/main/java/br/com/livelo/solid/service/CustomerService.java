@@ -12,6 +12,7 @@ public class CustomerService {
 	private AbstractDAO<String,CustomerPJ> customersPJ;
 	
 	private PrintService printService;
+	private AccountService accountService;
 	
 	private CustomerService(AbstractDAO<String, Customer> customers, AbstractDAO<String, CustomerPJ> customersPJ, PrintService printService) {
 		this.printService = printService;
@@ -29,7 +30,7 @@ public class CustomerService {
 	
 	public void print(String id) {
 		Customer customer = this.customers.getById(id);
-		printService.print(customer);
+		System.out.println(printService.format(customer));
 	}
 	
 	public void printAll() {

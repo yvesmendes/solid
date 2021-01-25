@@ -2,12 +2,10 @@ package br.com.livelo.solid.service;
 
 import br.com.livelo.solid.domain.Customer;
 
-public class PrintServiceName {
+public class PrintServiceName implements PrintService{
 
-	public void print(Customer customer) {
-		System.out.println(customer);
-	}
 
+	@Override
 	public String format(Customer customer) {
 		return new StringBuilder("Name: ")
 				.append(customer.getName())
@@ -16,6 +14,6 @@ public class PrintServiceName {
 				.append(customer.getAge())
 				.append(System.lineSeparator())
 				.append("Club: ")
-				.append(customer.isClub() ? "yes" : "no").toString();
+				.append(customer.getAccount().isClub() ? "yes" : "no").toString();
 	}
 }
